@@ -29,7 +29,6 @@ function populateTable() {
   tbody.innerHTML = "";
 
   transactions.forEach(transaction => {
-    // create and populate a table row
     let tr = document.createElement("tr");
     tr.innerHTML = `
       <td>${transaction.name}</td>
@@ -41,23 +40,20 @@ function populateTable() {
 }
 
 function populateChart() {
-  // copy array and reverse it
-  let reversed = transactions.slice().reverse();
   let sum = 0;
 
-  // create date labels for chart
-  let labels = reversed.map(t => {
+  let labels = transactions.map(t => {
     let date = new Date(t.date);
     return `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}`;
-  });
+  }).reverse();
 
-  // create incremental values for chart
-  let data = reversed.map(t => {
+  
+  let data = transactions.map(t => {
     sum += parseInt(t.value);
     return sum;
   });
 
-  // remove old chart if it exists
+  
   if (myChart) {
     myChart.destroy();
   }
@@ -83,7 +79,6 @@ function sendTransaction(isAdding) {
   let amountEl = document.querySelector("#t-amount");
   let errorEl = document.querySelector(".form .error");
 
-  // validate form
   if (nameEl.value === "" || amountEl.value === "") {
     errorEl.textContent = "Missing Information";
     return;
