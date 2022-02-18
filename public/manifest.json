@@ -1,5 +1,3 @@
-
-   
 {
     "icons": [
         {
@@ -43,10 +41,10 @@
             "type": "image/png"
           }
     ],
-    "name": "Budget Tracker",
-    "short_name": "Budgie",
+    "name": " Alfred Budget Tracker",
+    "short_name": "Alfred",
     "start_url": "./index.html",
     "display": "standalone",
-    "description": "An app that allows you to track your budget transactions.",
-    "background_color": "#01579b",
-    "theme_color": "#ffffff"
+    "description": "Transaction budget tracker",
+    "background_color": "green",
+    "theme_color": "#ffffff"}
